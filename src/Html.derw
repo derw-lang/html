@@ -1,0 +1,492 @@
+import @eeue56/coed as coed
+import @eeue56/coed exposing (HtmlNode, Event, Attribute, Program, RunningProgram, Tag)
+
+exposing (HtmlNode, Event, Attribute, Program, RunningProgram)
+exposing (text)
+exposing (on, onInput, onClick)
+exposing (program)
+exposing (a, abbr, address, area, article, aside, audio, b, base, bdi, bdo, blockquote, body, br, button, canvas, caption, cite, code, col, colgroup, data, datalist, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figure, footer, form, h1, h2, h3, h4, h5, h6, head, header, hgroup, hr, html, i, iframe, img, input, ins, kbd, keygen, label, legend, li, link, main, map_, mark, menu, menuitem, meta, meter, nav, noscript, object, ol, optgroup, option, output, p, param, pre, progress, q, rb, rp, rt, rtc, ruby, s, samp, script, section, select, small, source, span, strong, style, sub, summary, sup, table, tbody, td, template, textarea, tfoot, th, thead, time, title, tr, track, u, ul, var_, video, wbr)
+
+text: string -> HtmlNode msg
+text str =
+    coed.text str
+
+node: Tag -> List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+node tag events attributes children =
+    coed.node tag events attributes children
+
+map: (a -> b) -> HtmlNode a -> HtmlNode b
+map fn node =
+    coed.map fn node
+
+program: Program model msg -> RunningProgram model msg
+program p =
+    coed.program p
+
+-- events
+
+on: string -> (any -> msg) -> Event msg
+on name tagger =
+    coed.on name tagger
+
+onInput: (string -> msg) -> Event msg
+onInput fn =
+    coed.onInput fn
+
+onClick: (void -> msg) -> Event msg
+onClick fn =
+    on "click" fn
+
+-- tags
+
+a: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+a events attributes children =
+    coed.a events attributes children
+
+abbr: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+abbr events attributes children =
+    coed.abbr events attributes children
+
+address: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+address events attributes children =
+    coed.address events attributes children
+
+area: List (Event msg) -> List Attribute -> HtmlNode msg
+area events attributes =
+    coed.area events attributes
+
+article: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+article events attributes children =
+    coed.article events attributes children
+
+aside: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+aside events attributes children =
+    coed.aside events attributes children
+
+audio: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+audio events attributes children =
+    coed.audio events attributes children
+
+b: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+b events attributes children =
+    coed.b events attributes children
+
+base: List (Event msg) -> List Attribute -> HtmlNode msg
+base events attributes =
+    coed.base events attributes
+
+bdi: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+bdi events attributes children =
+    coed.bdi events attributes children
+
+bdo: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+bdo events attributes children =
+    coed.bdo events attributes children
+
+blockquote: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+blockquote events attributes children =
+    coed.blockquote events attributes children
+
+body: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+body events attributes children =
+    coed.body events attributes children
+
+br: List (Event msg) -> List Attribute -> HtmlNode msg
+br events attributes =
+    coed.br events attributes
+
+button: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+button events attributes children =
+    coed.button events attributes children
+
+canvas: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+canvas events attributes children =
+    coed.canvas events attributes children
+
+caption: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+caption events attributes children =
+    coed.caption events attributes children
+
+cite: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+cite events attributes children =
+    coed.cite events attributes children
+
+code: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+code events attributes children =
+    coed.code events attributes children
+
+col: List (Event msg) -> List Attribute -> HtmlNode msg
+col events attributes =
+    coed.col events attributes
+
+colgroup: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+colgroup events attributes children =
+    coed.colgroup events attributes children
+
+data: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+data events attributes children =
+    coed.data events attributes children
+
+datalist: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+datalist events attributes children =
+    coed.datalist events attributes children
+
+dd: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+dd events attributes children =
+    coed.dd events attributes children
+
+del: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+del events attributes children =
+    coed.del events attributes children
+
+details: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+details events attributes children =
+    coed.details events attributes children
+
+dfn: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+dfn events attributes children =
+    coed.dfn events attributes children
+
+dialog: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+dialog events attributes children =
+    coed.dialog events attributes children
+
+div: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+div events attributes children =
+    coed.div events attributes children
+
+dl: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+dl events attributes children =
+    coed.dl events attributes children
+
+dt: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+dt events attributes children =
+    coed.dt events attributes children
+
+em: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+em events attributes children =
+    coed.em events attributes children
+
+embed: List (Event msg) -> List Attribute -> HtmlNode msg
+embed events attributes =
+    coed.embed events attributes
+
+fieldset: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+fieldset events attributes children =
+    coed.fieldset events attributes children
+
+figure: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+figure events attributes children =
+    coed.figure events attributes children
+
+footer: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+footer events attributes children =
+    coed.footer events attributes children
+
+form: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+form events attributes children =
+    coed.form events attributes children
+
+h1: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+h1 events attributes children =
+    coed.h1 events attributes children
+
+h2: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+h2 events attributes children =
+    coed.h2 events attributes children
+
+h3: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+h3 events attributes children =
+    coed.h3 events attributes children
+
+h4: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+h4 events attributes children =
+    coed.h4 events attributes children
+
+h5: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+h5 events attributes children =
+    coed.h5 events attributes children
+
+h6: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+h6 events attributes children =
+    coed.h6 events attributes children
+
+head: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+head events attributes children =
+    coed.head events attributes children
+
+header: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+header events attributes children =
+    coed.header events attributes children
+
+hgroup: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+hgroup events attributes children =
+    coed.hgroup events attributes children
+
+hr: List (Event msg) -> List Attribute -> HtmlNode msg
+hr events attributes =
+    coed.hr events attributes
+
+html: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+html events attributes children =
+    coed.html events attributes children
+
+i: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+i events attributes children =
+    coed.i events attributes children
+
+iframe: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+iframe events attributes children =
+    coed.iframe events attributes children
+
+img: List (Event msg) -> List Attribute -> HtmlNode msg
+img events attributes =
+    coed.img events attributes
+
+input: List (Event msg) -> List Attribute -> HtmlNode msg
+input events attributes  =
+    coed.input events attributes
+
+ins: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+ins events attributes children =
+    coed.ins events attributes children
+
+kbd: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+kbd events attributes children =
+    coed.kbd events attributes children
+
+keygen: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+keygen events attributes children =
+    coed.keygen events attributes children
+
+label: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+label events attributes children =
+    coed.label events attributes children
+
+legend: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+legend events attributes children =
+    coed.legend events attributes children
+
+li: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+li events attributes children =
+    coed.li events attributes children
+
+link: List (Event msg) -> List Attribute -> HtmlNode msg
+link events attributes =
+    coed.link events attributes
+
+main: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+main events attributes children =
+    coed.main events attributes children
+
+map_: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+map_ events attributes children =
+    coed.map_ events attributes children
+
+mark: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+mark events attributes children =
+    coed.mark events attributes children
+
+menu: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+menu events attributes children =
+    coed.menu events attributes children
+
+menuitem: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+menuitem events attributes children =
+    coed.menuitem events attributes children
+
+meta: List (Event msg) -> List Attribute -> HtmlNode msg
+meta events attributes =
+    coed.meta events attributes
+
+meter: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+meter events attributes children =
+    coed.meter events attributes children
+
+nav: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+nav events attributes children =
+    coed.nav events attributes children
+
+noscript: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+noscript events attributes children =
+    coed.noscript events attributes children
+
+object: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+object events attributes children =
+    coed.object events attributes children
+
+ol: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+ol events attributes children =
+    coed.ol events attributes children
+
+optgroup: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+optgroup events attributes children =
+    coed.optgroup events attributes children
+
+option: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+option events attributes children =
+    coed.option events attributes children
+
+output: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+output events attributes children =
+    coed.output events attributes children
+
+p: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+p events attributes children =
+    coed.p events attributes children
+
+param: List (Event msg) -> List Attribute -> HtmlNode msg
+param events attributes =
+    coed.param events attributes
+
+pre: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+pre events attributes children =
+    coed.pre events attributes children
+
+progress: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+progress events attributes children =
+    coed.progress events attributes children
+
+q: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+q events attributes children =
+    coed.q events attributes children
+
+rb: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+rb events attributes children =
+    coed.rb events attributes children
+
+rp: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+rp events attributes children =
+    coed.rp events attributes children
+
+rt: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+rt events attributes children =
+    coed.rt events attributes children
+
+rtc: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+rtc events attributes children =
+    coed.rtc events attributes children
+
+ruby: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+ruby events attributes children =
+    coed.ruby events attributes children
+
+s: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+s events attributes children =
+    coed.s events attributes children
+
+samp: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+samp events attributes children =
+    coed.samp events attributes children
+
+script: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+script events attributes children =
+    coed.script events attributes children
+
+section: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+section events attributes children =
+    coed.section events attributes children
+
+select: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+select events attributes children =
+    coed.select events attributes children
+
+small: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+small events attributes children =
+    coed.small events attributes children
+
+source: List (Event msg) -> List Attribute -> HtmlNode msg
+source events attributes =
+    coed.source events attributes
+
+span: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+span events attributes children =
+    coed.span events attributes children
+
+strong: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+strong events attributes children =
+    coed.strong events attributes children
+
+style: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+style events attributes children =
+    coed.style events attributes children
+
+sub: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+sub events attributes children =
+    coed.sub events attributes children
+
+summary: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+summary events attributes children =
+    coed.summary events attributes children
+
+sup: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+sup events attributes children =
+    coed.sup events attributes children
+
+table: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+table events attributes children =
+    coed.table events attributes children
+
+tbody: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+tbody events attributes children =
+    coed.tbody events attributes children
+
+td: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+td events attributes children =
+    coed.td events attributes children
+
+template: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+template events attributes children =
+    coed.template events attributes children
+
+textarea: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+textarea events attributes children =
+    coed.textarea events attributes children
+
+tfoot: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+tfoot events attributes children =
+    coed.tfoot events attributes children
+
+th: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+th events attributes children =
+    coed.th events attributes children
+
+thead: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+thead events attributes children =
+    coed.thead events attributes children
+
+time: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+time events attributes children =
+    coed.time events attributes children
+
+title: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+title events attributes children =
+    coed.title events attributes children
+
+tr: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+tr events attributes children =
+    coed.tr events attributes children
+
+track: List (Event msg) -> List Attribute -> HtmlNode msg
+track events attributes =
+    coed.track events attributes
+
+u: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+u events attributes children =
+    coed.u events attributes children
+
+ul: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+ul events attributes children =
+    coed.ul events attributes children
+
+var_: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+var_ events attributes children =
+    coed.var_ events attributes children
+
+video: List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
+video events attributes children =
+    coed.video events attributes children
+
+wbr: List (Event msg) -> List Attribute -> HtmlNode msg
+wbr events attributes =
+    coed.wbr events attributes
