@@ -6,22 +6,36 @@ exposing (text)
 exposing (on, onInput, onClick)
 exposing (program)
 exposing (a, abbr, address, area, article, aside, audio, b, base, bdi, bdo, blockquote, body, br, button, canvas, caption, cite, code, col, colgroup, data, datalist, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figure, footer, form, h1, h2, h3, h4, h5, h6, head, header, hgroup, hr, html, i, iframe, img, input, ins, kbd, keygen, label, legend, li, link, main, map_, mark, menu, menuitem, meta, meter, nav, noscript, object, ol, optgroup, option, output, p, param, pre, progress, q, rb, rp, rt, rtc, ruby, s, samp, script, section, select, small, source, span, strong, style, sub, summary, sup, table, tbody, td, template, textarea, tfoot, th, thead, time, title, tr, track, u, ul, var_, video, wbr)
+exposing (map)
+exposing (class_, style_, attribute, none)
+exposing (node, render)
 
+-- text
 text: string -> HtmlNode msg
 text str =
     coed.text str
+
+-- internal
 
 node: Tag -> List (Event msg) -> List Attribute -> List (HtmlNode msg) -> HtmlNode msg
 node tag events attributes children =
     coed.node tag events attributes children
 
+-- mapping nodes
+
 map: (a -> b) -> HtmlNode a -> HtmlNode b
 map fn node =
     coed.map fn node
 
+-- running a html program
+
 program: Program model msg -> RunningProgram model msg
 program p =
     coed.program p
+
+render: HtmlNode a -> string
+render node =
+    coed.render node
 
 -- events
 
@@ -36,6 +50,24 @@ onInput fn =
 onClick: (void -> msg) -> Event msg
 onClick fn =
     on "click" fn
+
+-- attributes
+
+class_: string -> Attribute
+class_ name =
+    coed.class_ name
+
+style_: string -> string -> Attribute
+style_ name value =
+    coed.style_ name value
+
+none: Attribute
+none =
+    coed.none()
+
+attribute: string -> string -> Attribute
+attribute name value =
+    coed.attribute name value
 
 -- tags
 
