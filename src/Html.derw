@@ -1,10 +1,10 @@
 import @eeue56/coed as coed
 import @eeue56/coed exposing (HtmlNode, Event, Attribute, Program, RunningProgram, Tag)
 
-exposing (HtmlNode, Event, Attribute, Program, RunningProgram)
+exposing (HtmlNode, Event, Attribute, Program, RunningProgram, ProgramWithSend)
 exposing (text)
 exposing (on, onInput, onClick)
-exposing (program)
+exposing (program, programWithSend)
 exposing (a, abbr, address, area, article, aside, audio, b, base, bdi, bdo, blockquote, body, br, button, canvas, caption, cite, code, col, colgroup, data, datalist, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figure, footer, form, h1, h2, h3, h4, h5, h6, head, header, hgroup, hr, html, i, iframe, img, input, ins, kbd, keygen, label, legend, li, link, main, map_, mark, menu, menuitem, meta, meter, nav, noscript, object, ol, optgroup, option, output, p, param, pre, progress, q, rb, rp, rt, rtc, ruby, s, samp, script, section, select, small, source, span, strong, style, sub, summary, sup, table, tbody, td, template, textarea, tfoot, th, thead, time, title, tr, track, u, ul, var_, video, wbr)
 exposing (map)
 exposing (class_, style_, attribute, none)
@@ -31,6 +31,17 @@ map fn node =
 
 program: Program model msg -> RunningProgram model msg
 program p =
+    coed.program p
+
+type alias ProgramWithSend model msg = {
+    root: any,
+    initialModel: model,
+    update: msg -> model -> (msg -> void) -> model,
+    view: model -> HtmlNode msg
+}
+
+programWithSend: ProgramWithSend model msg -> RunningProgram model msg
+programWithSend p =
     coed.program p
 
 render: HtmlNode a -> string
