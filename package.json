@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/derw-lang/html#readme",
   "dependencies": {
-    "@eeue56/coed": "^0.0.7"
+    "@eeue56/coed": "^0.0.8"
   }
 }
