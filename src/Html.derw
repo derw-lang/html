@@ -8,7 +8,7 @@ exposing (program, programWithSend)
 exposing (a, abbr, address, area, article, aside, audio, b, base, bdi, bdo, blockquote, body, br, button, canvas, caption, cite, code, col, colgroup, data, datalist, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figure, footer, form, h1, h2, h3, h4, h5, h6, head, header, hgroup, hr, html, i, iframe, img, input, ins, kbd, keygen, label, legend, li, link, main, map_, mark, menu, menuitem, meta, meter, nav, noscript, object, ol, optgroup, option, output, p, param, pre, progress, q, rb, rp, rt, rtc, ruby, s, samp, script, section, select, small, source, span, strong, style, sub, summary, sup, table, tbody, td, template, textarea, tfoot, th, thead, time, title, tr, track, u, ul, var_, video, wbr)
 exposing (map)
 exposing (class_, style_, attribute, none)
-exposing (node, render)
+exposing (node, render, flatRender, hydrate)
 
 -- text
 text: string -> HtmlNode msg
@@ -47,6 +47,14 @@ programWithSend p =
 render: HtmlNode a -> string
 render node =
     coed.render node
+
+flatRender: HtmlNode a -> string
+flatRender node =
+    coed.flatRender node
+
+hydrate: RunningProgram model msg -> any -> void
+hydrate p root =
+    coed.hydrate p root
 
 -- events
 
